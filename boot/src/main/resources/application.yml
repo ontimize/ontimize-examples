@@ -61,7 +61,7 @@ server:
       enabled: true
       mime-types: application/json, application/xml
       
-# LDAP Imatia 
+# LDAP
 ldap: 
    active: true 
    host: 
