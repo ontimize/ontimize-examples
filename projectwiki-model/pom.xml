@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ontimize</groupId>
@@ -13,29 +15,31 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
-
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.ontimize</groupId>
 			<artifactId>projectwiki-api</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.ontimize.jee</groupId>
 			<artifactId>ontimize-jee-server-jdbc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.ontimize.jee.dms</groupId>
+			<artifactId>ontimize-jee-dms-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ontimize.jee.dms</groupId>
+			<artifactId>ontimize-jee-dms-common</artifactId>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<finalName>${project.artifactId}</finalName>
-
 	</build>
 	<profiles>
 		<profile>
@@ -55,9 +59,12 @@
 								</goals>
 								<configuration>
 									<target>
-										<available file="${hsqldatabase.path}/templateDB.script" property="database.exist" />
+										<available
+											file="${hsqldatabase.path}/templateDB.script"
+											property="database.exist" />
 										<echo message="${hsqldatabase.path}/templateDB.script" />
-										<copy tofile="${hsqldatabase.path}/templateDB.script" file="${hsqldatabase.path}/templateDB.txt" />
+										<copy tofile="${hsqldatabase.path}/templateDB.script"
+											file="${hsqldatabase.path}/templateDB.txt" />
 									</target>
 								</configuration>
 							</execution>
