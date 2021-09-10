@@ -5,6 +5,9 @@ logging:
    level:
       root: info
 ontimize:
+   dms:
+      engine: odms
+      basePath: file:/C:/applications/projectwiki/dms
    corsfilter:
       enabled: true
    globalcors:
