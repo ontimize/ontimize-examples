@@ -26,7 +26,7 @@ ontimize:
          uppperString: true
          upperLike: true
    security:
-      mode: default
+      mode: ldap
       ignorePaths: /app/**
       roleInformationService:
          roleRepository: UserRoleDao
@@ -60,6 +60,16 @@ server:
    compression:
       enabled: true
       mime-types: application/json, application/xml
+# LDAP
+ldap: 
+   active: true
+   host: 10.0.0.1
+   port: 389
+   # El tipo de login indica si se utilizará una cadena de LDAP completa ("DN") o si simplemente se proporcionará el nombre de usuario ("simple") 
+   loginType: simple
+   bind.dn:
+   base.dn:
+   domain: yourdomain.com
 spring:
    datasource:
       driver-class-name: org.hsqldb.jdbcDriver
