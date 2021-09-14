@@ -5,6 +5,19 @@ logging:
    level:
       root: info
 ontimize:
+   mail:
+      refRepository: OCSettingsDao
+      filterColumnName: SETTING_KEY
+      valueColumnName: SETTING_VALUE
+      queryId: default
+      filterColumnValueEncoding: mail_encoding
+      filterColumnValueHost: mail_host
+      filterColumnValuePort: mail_port
+      filterColumnValueProtocol: mail_protocol
+      filterColumnValueUser: mail_user
+      filterColumnValuePassword: mail_password
+      filterColumnValueJavaMailProperties: mail_properties
+      engine: default
    corsfilter:
       enabled: true
    globalcors:

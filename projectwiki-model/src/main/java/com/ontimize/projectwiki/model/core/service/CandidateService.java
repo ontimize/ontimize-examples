@@ -26,6 +26,8 @@ public class CandidateService implements ICandidateService {
 	private CandidateDao candidateDao;
 	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
+	@Autowired
+	private IMailService mailService;
 
 	@Override
 	public EntityResult candidateQuery(Map<String, Object> keyMap, List<String> attrList)
@@ -35,7 +37,28 @@ public class CandidateService implements ICandidateService {
 
 	@Override
 	public EntityResult candidateInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		return this.daoHelper.insert(this.candidateDao, attrMap);
+		EntityResult toRet = this.daoHelper.insert(this.candidateDao, attrMap);
+
+		if ((toRet.getCode() != EntityResult.OPERATION_WRONG)) {
+
+			Runnable runnable = () -> {
+
+				List<String> receiverList = new ArrayList<String>();
+				receiverList.add("receiver@example.com");
+				StringBuilder builder = new StringBuilder();
+				builder.append("Created new user.");
+				try {
+					this.mailService.sendMailWithoutAttach("my.mail@example.com", receiverList, "New candidate",
+							builder.toString());
+				} catch (OntimizeJEEException e) {
+				}
+			};
+			
+			DelegatingSecurityContextRunnable wrappedRunnable = new DelegatingSecurityContextRunnable(runnable);
+			new Thread(wrappedRunnable).start();
+		}
+
+		return toRet;
 	}
 
 	@Override
