@@ -26,7 +26,7 @@ ontimize:
          uppper-string: true
          upper-like: true
    security:
-      mode: default
+      mode: ldap
       ignore-paths: /app/**
       role-information-service:
          role-repository: UserRoleDao
@@ -53,6 +53,15 @@ ontimize:
          query-id: userRole
          role-login-column: USER_
          role-name-column: ROLENAME
+ldap: 
+
+   active: true 
+   host: 10.0.0.1
+   port: 389
+   login-type: simple
+   bind.dn: 
+   base.dn: 
+   domain: yourdomain.com
 server:
    port: 33333
    tomcat:
