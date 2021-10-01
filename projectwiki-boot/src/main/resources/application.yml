@@ -5,6 +5,15 @@ logging:
    level:
       root: info
 ontimize:
+   i18n:
+      refBundleRepository: OCDatabaseBundleDao
+      bundleKeyColumn: ID_I18N
+      bundleClassNameColumn: CLASS_NAME
+      bundleDescriptionColumn: I18N_DESCRIPTION
+      refBundleValueRepository: OCDatabaseBundleValueDao
+      bundleValueTextKeyColumn: KEY
+      bundleValueKeyColumn: ID_I18N_VALUE
+      engine: default
    corsfilter:
       enabled: true
    globalcors:
