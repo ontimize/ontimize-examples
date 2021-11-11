@@ -2,6 +2,7 @@ package com.ontimize.projectwiki.model.core.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -25,6 +26,11 @@ public class CandidateService implements ICandidateService {
 	@Override
 	public EntityResult candidateQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException {
+		try {
+			TimeUnit.MINUTES.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return this.daoHelper.query(this.candidateDao, keyMap, attrList);
 	}
 

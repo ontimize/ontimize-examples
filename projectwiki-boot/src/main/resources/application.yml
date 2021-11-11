@@ -53,6 +53,15 @@ ontimize:
          query-id: userRole
          role-login-column: USER_
          role-name-column: ROLENAME
+   asynctask:
+      enable: true
+      engine: database
+      url: /tasks
+   threadpool:
+      coresize: 1
+      maxsize: 2147483647
+      keepalive: 1000
+      timeout: true
 server:
    port: 33333
    tomcat:
