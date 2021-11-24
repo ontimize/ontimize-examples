@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
-import com.ontimize.db.EntityResult;
 import com.ontimize.hr.api.core.service.IOfferService;
 import com.ontimize.hr.model.core.dao.OfferCandidateStatusDao;
 import com.ontimize.hr.model.core.dao.OfferCandidatesDao;
 import com.ontimize.hr.model.core.dao.OfferDao;
 import com.ontimize.hr.model.core.dao.OfferStatusDao;
+import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.common.security.PermissionsProviderSecured;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;

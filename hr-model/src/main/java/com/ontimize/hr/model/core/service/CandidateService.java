@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ontimize.db.EntityResult;
 import com.ontimize.hr.api.core.service.ICandidateService;
 import com.ontimize.hr.model.core.dao.CandidateDao;
 import com.ontimize.hr.model.core.dao.EducationDao;
@@ -19,6 +18,7 @@ import com.ontimize.hr.model.core.dao.ExperienceLevelDao;
 import com.ontimize.hr.model.core.dao.OriginDao;
 import com.ontimize.hr.model.core.dao.ProfileDao;
 import com.ontimize.hr.model.core.dao.StatusDao;
+import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 

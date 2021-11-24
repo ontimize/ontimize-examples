@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.ontimize.hr.api.core.service.IUserService;
 import com.ontimize.hr.model.core.dao.UserDao;
-import com.ontimize.db.EntityResult;
+import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
 

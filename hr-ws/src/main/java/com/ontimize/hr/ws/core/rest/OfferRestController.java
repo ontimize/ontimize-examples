@@ -7,25 +7,24 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ontimize.db.EntityResult;
-import com.ontimize.db.SQLStatementBuilder;
-import com.ontimize.db.SQLStatementBuilder.BasicExpression;
-import com.ontimize.db.SQLStatementBuilder.BasicField;
-import com.ontimize.db.SQLStatementBuilder.BasicOperator;
 import com.ontimize.hr.api.core.service.IOfferService;
 import com.ontimize.hr.model.core.dao.OfferDao;
+import com.ontimize.jee.common.db.SQLStatementBuilder;
+import com.ontimize.jee.common.db.SQLStatementBuilder.BasicExpression;
+import com.ontimize.jee.common.db.SQLStatementBuilder.BasicField;
+import com.ontimize.jee.common.db.SQLStatementBuilder.BasicOperator;
+import com.ontimize.jee.common.dto.EntityResult;
+import com.ontimize.jee.common.dto.EntityResultMapImpl;
 import com.ontimize.jee.server.rest.ORestController;
 
 @RestController
 @RequestMapping("/offers")
-@ComponentScan(basePackageClasses = { com.ontimize.hr.api.core.service.IOfferService.class })
 public class OfferRestController extends ORestController<IOfferService> {
 
 	@Autowired
@@ -46,7 +45,7 @@ public class OfferRestController extends ORestController<IOfferService> {
 			return offerService.offerQuery(key, columns);
 		} catch (Exception e) {
 			e.printStackTrace();
-			EntityResult res = new EntityResult();
+			EntityResult res = new EntityResultMapImpl();
 			res.setCode(EntityResult.OPERATION_WRONG);
 			return res;
 		}
@@ -64,7 +63,7 @@ public class OfferRestController extends ORestController<IOfferService> {
 			return offerService.offerQuery(key, columns);
 		} catch (Exception e) {
 			e.printStackTrace();
-			EntityResult res = new EntityResult();
+			EntityResult res = new EntityResultMapImpl();
 			res.setCode(EntityResult.OPERATION_WRONG);
 			return res;
 		}
