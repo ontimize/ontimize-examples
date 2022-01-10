@@ -53,6 +53,8 @@ ontimize:
          query-id: userRole
          role-login-column: USER_
          role-name-column: ROLENAME
+   save-config: true
+   save-config-dao: ConfigsDao
 server:
    port: 33333
    tomcat:
