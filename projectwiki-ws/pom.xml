@@ -19,5 +19,10 @@
 			<groupId>com.ontimize.boot</groupId>
 			<artifactId>ontimize-boot-starter-rest</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.ontimize.jee</groupId>
+			<artifactId>ontimize-jee-webclient-addons</artifactId>
+		</dependency>
 	</dependencies>
 </project>
