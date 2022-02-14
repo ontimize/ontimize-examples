@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
 	catalog="" schema="${mainschema}" table="TUSER_ROLE"
-	datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+	datasource="dbone" sqlhandler="hsqldbSQLStatementHandler">
 	<DeleteKeys>
 		<Column>usro_id</Column>
 	</DeleteKeys>

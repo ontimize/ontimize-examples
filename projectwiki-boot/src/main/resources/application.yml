@@ -5,6 +5,23 @@ logging:
    level:
       root: info
 ontimize:
+   datasources:
+      dbone:
+         driver-class-name: org.hsqldb.jdbcDriver
+         jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
+         username: SA
+         password:
+         initial-size: 10
+         test-on-borrow: true
+      dbtwo:
+         driver-class-name: org.hsqldb.jdbcDriver
+         jdbc-url: jdbc:hsqldb:hsql://localhost:9014/templateDB
+         username: SA
+         password:
+         initial-size: 10
+         test-on-borrow: true
+   jdbc:
+      name-convention: upper
    corsfilter:
       enabled: true
    globalcors:
@@ -19,12 +36,6 @@ ontimize:
             - PUT
             - OPTIONS
             - DELETE
-   jdbc:
-      name-convention: upper
-      sqlhandler: hsqldb
-      sql-condition-processor:
-         uppper-string: true
-         upper-like: true
    security:
       mode: default
       ignore-paths: /app/**
@@ -61,13 +72,6 @@ server:
       enabled: true
       mime-types: application/json, application/xml
 spring:
-   datasource:
-      driver-class-name: org.hsqldb.jdbcDriver
-      jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
-      username: SA
-      password:
-      initial-size: 10
-      test-on-borrow: true
    main:
       banner-mode: 'off'
    session:
