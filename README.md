@@ -1,8 +1,15 @@
 # Getting Started
 
 ## First init
+
+### Backend
 ```
 mvn clean install
+```
+### Frontend
+
+```
+npm install
 ```
 ## Launch database
 ```
@@ -21,4 +28,10 @@ If you are no longer doing active development on the backend (e.g.: you are deve
 mvn clean install
 cd *-boot
 mvn spring-boot:run
+```
+
+## Launch frontend
+
+```
+npm start
 ```
