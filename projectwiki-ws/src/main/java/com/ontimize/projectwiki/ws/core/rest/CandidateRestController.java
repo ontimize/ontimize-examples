@@ -11,7 +11,6 @@ import com.ontimize.projectwiki.api.core.service.ICandidateService;
 
 @RestController
 @RequestMapping("/candidates")
-@ComponentScan(basePackageClasses = { com.ontimize.projectwiki.api.core.service.ICandidateService.class })
 public class CandidateRestController extends OSdmsRestController<ICandidateService> {
 
 	@Autowired

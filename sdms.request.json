@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "841fce0f-174c-4ef0-b27e-2342dd712c20",
+		"name": "SDMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19149134"
+	},
+	"item": [
+		{
+			"name": "UPLOAD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/angel.herce/Downloads/file-01.txt"
+						},
+						{
+							"key": "data",
+							"value": "{\"filter\": { \"data\": {\"id\": 1}},\"data\":{\"prefix\": \"/\", \"fileName\":\"file-00.png\"}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/upload",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"filter\":{\"workspace\":\"default\",\"data\":{\"id\":1}}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/find/id/Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc=",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"find",
+						"id",
+						"Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc="
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filter\": {\r\n        \"workspace\": \"default\",\r\n        \"prefix\": \"/\",\r\n        \"data\": {\"id\": 1}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/find",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DOWNLOAD BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"filter\": { \"data\": {\"id\": 1}}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/download/id/Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc=",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"download",
+						"id",
+						"Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc="
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "'{\"filter\":{\"data\":{\"id\":1}}}'\n",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DOWNLOAD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"filter\":{\"workspace\":\"default\",\"data\":{\"id\":1},\"key\":[\"candidate/1/file-00.png\"]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/download",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"download"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filter\": {\r\n        \"key\":\"candidate/1/file-00.png\",\r\n        \"data\": { \"id\": 1 }\r\n    },\r\n    \"data\": {\r\n        \"key\": \"candidate/1/file-00-edited.png\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/update",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COPY",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filter\": {\r\n        \"key\":\"candidate/1/file-00-edited.png\",\r\n        \"data\": { \"id\": 1 }\r\n    },\r\n    \"data\": {\r\n        \"key\": \"candidate/1/file-00-copy.png\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/copy",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"copy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOVE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filter\": {\r\n        \"key\":\"candidate/1/file-00-copy.png\",\r\n        \"data\": { \"id\": 1 }\r\n    },\r\n    \"data\": {\r\n        \"key\": \"candidate/1/file-00-move.png\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/move",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"move"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BY ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"filter\": { \"data\": {\"id\": 1}}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/delete/id/Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc=",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"delete",
+						"id",
+						"Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc="
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filter\": {\r\n        \"workspace\": \"default\",\r\n        \"prefix\":[\"/\"],\r\n        \"delimiter\": \"/\",\r\n        \"data\": {\"id\": 1}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{URL}}/sdms/delete",
+					"host": [
+						"{{HOST}}{{URL}}"
+					],
+					"path": [
+						"sdms",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:33333",
+			"type": "string"
+		},
+		{
+			"key": "URL",
+			"value": "/candidates/candidate",
+			"type": "string"
+		}
+	]
+}

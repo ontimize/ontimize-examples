@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.ontimize.jee.sdms.common.dto.OSdmsRestDataDto;
+import com.ontimize.jee.sdms.common.workspace.annotation.OSdmsWorkspace;
 import com.ontimize.jee.sdms.server.service.IOSdmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service("CandidateService")
 @Lazy
+@OSdmsWorkspace( "candidate/{id}" )
 public class CandidateService implements ICandidateService {
 
 	@Autowired

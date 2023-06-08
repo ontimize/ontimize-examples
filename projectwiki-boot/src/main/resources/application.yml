@@ -4,14 +4,16 @@ endpoints:
 logging:
    level:
       root: info
+      com.ontimize.jee.sdms: debug
 ontimize:
    sdms:
       engine: s3
       s3:
-         access-key:
-         secret-key:
-         bucket: odms-proof
-         region:
+         access-key: test
+         secret-key: test
+         bucket: sdms-proof
+         region: us-east-1
+         endpoint: http://s3.localhost.localstack.cloud:4566
    corsfilter:
       enabled: true
    globalcors:
