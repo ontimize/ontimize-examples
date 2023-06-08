@@ -9,11 +9,11 @@ ontimize:
    sdms:
       engine: s3
       s3:
-         access-key: test
-         secret-key: test
+         access-key: test-access
+         secret-key: test-secret
          bucket: sdms-proof
          region: us-east-1
-         endpoint: http://s3.localhost.localstack.cloud:4566
+         endpoint: http://localhost:9000
    corsfilter:
       enabled: true
    globalcors:
