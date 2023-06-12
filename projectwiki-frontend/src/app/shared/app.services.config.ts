@@ -3,6 +3,6 @@ export const SERVICE_CONFIG: Object = {
     'path': '/candidates'
   },
   'permissions': {
-    'path': '/permissions'
+    'path': '/permissions/permission'
   }
 };

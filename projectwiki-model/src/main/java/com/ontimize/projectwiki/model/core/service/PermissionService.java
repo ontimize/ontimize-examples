@@ -19,7 +19,7 @@ import com.ontimize.projectwiki.api.core.service.IPermissionService;
 
 public class PermissionService implements IPermissionService {
 
-    public static final String PLANNER_PERMISSION = "{\"menu\": [{ \"attr\": \"menu\", \"visible\": false, \"enabled\": true }]}";
+    public static final String PLANNER_PERMISSION = "{\"menu\": [{ \"attr\": \"candidates\", \"visible\": true, \"enabled\": true }]}";
 
     @Override
     public EntityResult permissionQuery(Map<String, Object> keyMap, List<String> attrList)
