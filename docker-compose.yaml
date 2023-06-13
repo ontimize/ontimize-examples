@@ -25,8 +25,6 @@ services:
     depends_on:
       minio:
         condition: service_healthy
-    environment:
-      MC_HOST: 'minio=http://minio:minio123@minio:9000'
     entrypoint: /bin/sh
     command: -c '
       echo Waiting for Minio server to start... &&
