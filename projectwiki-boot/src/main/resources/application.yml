@@ -36,7 +36,7 @@ ontimize:
          upper-like: true
    security:
       mode: default
-      ignore-paths: '/app/**,/error,/ontimize/**,/users/**,/candidates/**'
+      ignore-paths: "/app/**,/error,/ontimize/health"
       role-information-service:
          role-repository: UserRoleDao
          role-name-column: ROLENAME
