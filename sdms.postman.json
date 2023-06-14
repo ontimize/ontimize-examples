@@ -9,6 +9,21 @@
 		{
 			"name": "UPLOAD",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -17,11 +32,11 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "/C:/Users/angel.herce/Downloads/file-01.txt"
+							"src": "/C:/Users/angel.herce/Downloads/file.png"
 						},
 						{
 							"key": "data",
-							"value": "{\"filter\": { \"data\": {\"id\": 1}},\"data\":{\"prefix\": \"/\", \"fileName\":\"file-00.png\"}}",
+							"value": "{\"filter\": { \"data\": {\"id\": 1}},\"data\":{\"prefix\": \"/\", \"fileName\":\"poison.png\"}}",
 							"type": "text"
 						}
 					]
@@ -45,20 +60,29 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "data",
-							"value": "{\"filter\":{\"workspace\":\"default\",\"data\":{\"id\":1}}}",
-							"type": "text"
-						}
-					]
+					"formdata": []
 				},
 				"url": {
-					"raw": "{{HOST}}{{URL}}/sdms/find/id/Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc=",
+					"raw": "{{HOST}}{{URL}}/sdms/find/id/Y2FuZGlkYXRlLzEvcG9pc29uLnBuZw==",
 					"host": [
 						"{{HOST}}{{URL}}"
 					],
@@ -66,7 +90,7 @@
 						"sdms",
 						"find",
 						"id",
-						"Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc="
+						"Y2FuZGlkYXRlLzEvcG9pc29uLnBuZw=="
 					]
 				}
 			},
@@ -75,6 +99,21 @@
 		{
 			"name": "FIND",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -105,20 +144,29 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "data",
-							"value": "{\"filter\": { \"data\": {\"id\": 1}}}",
-							"type": "text"
-						}
-					]
+					"formdata": []
 				},
 				"url": {
-					"raw": "{{HOST}}{{URL}}/sdms/download/id/Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc=",
+					"raw": "{{HOST}}{{URL}}/sdms/download/id/Y2FuZGlkYXRlLzEvcG9pc29uLnBuZw==",
 					"host": [
 						"{{HOST}}{{URL}}"
 					],
@@ -126,7 +174,7 @@
 						"sdms",
 						"download",
 						"id",
-						"Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc="
+						"Y2FuZGlkYXRlLzEvcG9pc29uLnBuZw=="
 					],
 					"query": [
 						{
@@ -142,11 +190,26 @@
 		{
 			"name": "DOWNLOAD",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"filter\":{\"workspace\":\"default\",\"data\":{\"id\":1},\"key\":[\"candidate/1/file-00.png\"]}}",
+					"raw": "{\"filter\":{\"workspace\":\"default\",\"data\":{\"id\":1},\"prefix\":[\"/\"]}}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -169,6 +232,21 @@
 		{
 			"name": "UPDATE",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -196,6 +274,21 @@
 		{
 			"name": "COPY",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -223,6 +316,21 @@
 		{
 			"name": "MOVE",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -250,6 +358,21 @@
 		{
 			"name": "DELETE BY ID",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"body": {
@@ -263,7 +386,7 @@
 					]
 				},
 				"url": {
-					"raw": "{{HOST}}{{URL}}/sdms/delete/id/Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc=",
+					"raw": "{{HOST}}{{URL}}/sdms/delete/id/Y2FuZGlkYXRlLzEvcG9pc29uLnBuZw==",
 					"host": [
 						"{{HOST}}{{URL}}"
 					],
@@ -271,7 +394,7 @@
 						"sdms",
 						"delete",
 						"id",
-						"Y2FuZGlkYXRlLzEvZmlsZS0wMC5wbmc="
+						"Y2FuZGlkYXRlLzEvcG9pc29uLnBuZw=="
 					]
 				}
 			},
@@ -280,11 +403,26 @@
 		{
 			"name": "DELETE",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASS}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{USER}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"filter\": {\r\n        \"workspace\": \"default\",\r\n        \"prefix\":[\"/\"],\r\n        \"delimiter\": \"/\",\r\n        \"data\": {\"id\": 1}\r\n    }\r\n}",
+					"raw": "{\r\n    \"filter\": {\r\n        \"workspace\": \"default\",\r\n        \"key\":[\"candidate/1/file.png\"],\r\n        \"data\": {\"id\": 1}\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -334,6 +472,16 @@
 		{
 			"key": "URL",
 			"value": "/candidates/candidate",
+			"type": "string"
+		},
+		{
+			"key": "USER",
+			"value": "demo",
+			"type": "string"
+		},
+		{
+			"key": "PASS",
+			"value": "demouser",
 			"type": "string"
 		}
 	]
