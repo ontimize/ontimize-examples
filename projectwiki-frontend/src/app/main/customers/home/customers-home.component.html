@@ -1,0 +1,16 @@
+<o-form-layout-manager mode="tab" title="CANDIDATES" label-columns="FIRST_NAME;LAST_NAME" separator=", " attr="o-form-layout-candidates-home"
+  title-data-origin="candidates_form_edit">
+  <div fxFill fxLayout="column" fxLayoutAlign="start">
+    <o-table fxFlex attr="candidate" title="CANDIDATES" service="candidates" entity="candidate" keys="ID" columns="ID;FIRST_NAME;LAST_NAME;EMAIL;ADDRESS;COUNTRY;COMPANY;PHONE"
+      visible-columns="ID;FIRST_NAME;LAST_NAME;EMAIL;ADDRESS;COUNTRY;COMPANY;PHONE" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
+      row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
+
+      <o-table-columns-filter columns="LAST_NAME">
+        <o-table-columns-filter-column attr="LAST_NAME" sort="desc"> </o-table-columns-filter-column>
+      </o-table-columns-filter>
+
+      <o-table-context-menu></o-table-context-menu>
+      <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+    </o-table>
+  </div>
+</o-form-layout-manager>
