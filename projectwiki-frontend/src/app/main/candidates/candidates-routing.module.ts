@@ -4,7 +4,14 @@ import { CandidatesHomeComponent } from './home/candidates-home.component';
 
 
 export const routes: Routes = [
-  { path: '', component: CandidatesHomeComponent },
+  {
+    path: '', component: CandidatesHomeComponent,
+    data: {
+      oPermission: {
+        permissionId: 'candidates-table-route'
+      }
+    }
+  }
   /*{ path: 'new', component: CandidatesNewComponent },
   {
     path: ':CUSTOMERID',

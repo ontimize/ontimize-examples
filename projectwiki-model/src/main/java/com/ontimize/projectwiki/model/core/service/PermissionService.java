@@ -24,10 +24,12 @@ import com.ontimize.projectwiki.api.core.service.IPermissionService;
 public class PermissionService implements IPermissionService {
 
     public static final String CANDIDATE_PERMISSION;
+    public static final String DEMO_PERMISSION;
 
     static {
         try {
-            CANDIDATE_PERMISSION = FileUtils.readFileToString(new File("../../../resources/candidate_permissions.json"), StandardCharsets.UTF_8);
+            CANDIDATE_PERMISSION = FileUtils.readFileToString(new File("projectwiki-model/src/main/resources/candidate_permissions.json"), StandardCharsets.UTF_8);
+            DEMO_PERMISSION = FileUtils.readFileToString(new File("projectwiki-model/src/main/resources/demo_permissions.json"), StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -40,8 +42,11 @@ public class PermissionService implements IPermissionService {
         EntityResult e = new EntityResultMapImpl();
         Map<String, String> map = new HashMap<>();
         String role = authentication.getAuthorities().toArray()[0].toString();
-        if (!role.equals("candidate rol")) {
+        if (role.equals("candidate role")) {
             map.put("permission", PermissionService.CANDIDATE_PERMISSION);
+        }
+        else if (role.equals("admin")) {
+            map.put("permission", PermissionService.DEMO_PERMISSION);
         }
         e.addRecord(map);
         return e;
