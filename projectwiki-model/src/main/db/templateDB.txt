@@ -72,7 +72,7 @@ INSERT INTO TROLE VALUES(1,'candidate role','<?xml version="1.0" encoding="UTF-8
 INSERT INTO TUSER_ROLE VALUES(0,0,'demo')
 INSERT INTO TUSER_ROLE VALUES(1,1,'candidate')
 INSERT INTO TSERVER_PERMISSION VALUES(0,'com.ontimize.jee.common.services.user.IUserInformationService/getUserInformation')
-INSERT INTO TSERVER_PERMISSION VALUES(2,'com.ontimize.projectwiki.model.core.service.ICandidateService/candidateQuery')
+INSERT INTO TSERVER_PERMISSION VALUES(2,'com.ontimize.projectwiki.api.core.service.ICandidateService/candidateQuery')
 INSERT INTO TSETTING VALUES(0,'mail_host','smtp.gmail.com','Host del servidor')
 INSERT INTO TSETTING VALUES(1,'mail_port','587','Puerto del servidor de email')
 INSERT INTO TSETTING VALUES(2,'mail_protocol','smtp','Protocolo de env\u005cu00edo de mails')
