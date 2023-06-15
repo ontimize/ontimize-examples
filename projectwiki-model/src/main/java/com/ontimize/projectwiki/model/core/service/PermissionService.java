@@ -1,9 +1,13 @@
 package com.ontimize.projectwiki.model.core.service;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,7 +23,15 @@ import com.ontimize.projectwiki.api.core.service.IPermissionService;
 
 public class PermissionService implements IPermissionService {
 
-    public static final String PLANNER_PERMISSION = "{\"menu\": [{ \"attr\": \"candidates\", \"visible\": true, \"enabled\": true }]}";
+    public static final String CANDIDATE_PERMISSION;
+
+    static {
+        try {
+            CANDIDATE_PERMISSION = FileUtils.readFileToString(new File("../../../resources/candidate_permissions.json"), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Override
     public EntityResult permissionQuery(Map<String, Object> keyMap, List<String> attrList)
@@ -29,7 +41,7 @@ public class PermissionService implements IPermissionService {
         Map<String, String> map = new HashMap<>();
         String role = authentication.getAuthorities().toArray()[0].toString();
         if (!role.equals("candidate rol")) {
-            map.put("permission", PermissionService.PLANNER_PERMISSION);
+            map.put("permission", PermissionService.CANDIDATE_PERMISSION);
         }
         e.addRecord(map);
         return e;
