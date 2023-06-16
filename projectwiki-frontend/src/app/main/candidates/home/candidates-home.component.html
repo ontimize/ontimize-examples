@@ -2,14 +2,15 @@
   title-data-origin="candidates_form_edit">
   <div fxFill fxLayout="column" fxLayoutAlign="start">
     <o-table fxFlex attr="candidate" title="CANDIDATES" service="candidates" entity="candidate" keys="ID"
-      columns="ID;FIRST_NAME;LAST_NAME;EMAIL;ADDRESS;COUNTRY;COMPANY;PHONE"
-      visible-columns="ID;FIRST_NAME;LAST_NAME;EMAIL;ADDRESS;COUNTRY;COMPANY;PHONE" query-rows="24" quick-filter="yes"
-      row-height="medium" select-all-checkbox="true" virtual-scroll="no" query-on-init="yes">
+      columns="ID;FIRST_NAME;LAST_NAME;EMAIL;ADDRESS;COUNTRY;COMPANY;PHONE" detail-mode="dblclick"
+      visible-columns="FIRST_NAME;LAST_NAME;EMAIL;ADDRESS;COUNTRY;COMPANY;PHONE" query-rows="24" quick-filter="yes"
+      row-height="medium" select-all-checkbox="false" select-all-checkbox-visible="false" virtual-scroll="no" query-on-init="yes">
 
       <o-table-columns-filter columns="LAST_NAME">
         <o-table-columns-filter-column attr="LAST_NAME" sort="desc"> </o-table-columns-filter-column>
       </o-table-columns-filter>
-
+      <o-table-column attr="FIRST_NAME" title="FIRST NAME"></o-table-column>
+      <o-table-column attr="LAST_NAME" title="LAST NAME"></o-table-column>
       <o-table-context-menu></o-table-context-menu>
       <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
     </o-table>

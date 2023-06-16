@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CandidatesHomeComponent } from './home/candidates-home.component';
+import { CandidatesNewComponent } from './new/candidates-new.component';
+import { CandidatesDetailComponent } from './detail/candidates-detail.component';
 
 
 export const routes: Routes = [
@@ -11,17 +13,24 @@ export const routes: Routes = [
         permissionId: 'candidates-table-route'
       }
     }
-  }
-  /*{ path: 'new', component: CandidatesNewComponent },
+  },
   {
-    path: ':CUSTOMERID',
+    path: 'new', component: CandidatesNewComponent,
+    data: {
+      oPermission: {
+        permissionId: 'candidates-table-route'
+      }
+    }
+  },
+  {
+    path: ':ID',
     component: CandidatesDetailComponent,
     data: {
       oPermission: {
-        permissionId: 'customer-detail-permissions'
+        permissionId: 'candidates-table-route'
       }
     }
-  }*/
+  }
 ];
 
 @NgModule({

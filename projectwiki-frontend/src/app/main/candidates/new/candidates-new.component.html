@@ -1,0 +1,14 @@
+<o-form attr="candidates_form_insert" service="candidates" entity="candidate" keys="ID" fxLayout="column" show-header="yes"
+  header-actions="R;U;D" after-insert-mode="detail">
+  <o-column title="Personal data" fxFlex>
+    <o-text-input attr="FIRST_NAME" label="First name" fxFlex></o-text-input>
+    <o-text-input attr="LAST_NAME" label="Last name" fxFlex></o-text-input>
+    <o-email-input attr="EMAIL" label="Email" fxFlex></o-email-input>
+    <o-phone-input attr="PHONE" label="Phone" fxFlex></o-phone-input>
+    <o-text-input attr="ADDRESS" label="Address" fxFlex></o-text-input>
+    <o-text-input attr="COUNTRY" label="Country" fxFlex></o-text-input>
+  </o-column>
+  <o-column title="Company data" fxFlex>
+    <o-text-input attr="COMPANY" label="Company" fxFlex></o-text-input>
+  </o-column>
+</o-form>

@@ -30,17 +30,20 @@ public class CandidateService implements ICandidateService {
     }
 
     @Override
+    @Secured({ PermissionsProviderSecured.SECURED })
     public EntityResult candidateInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.insert(this.candidateDao, attrMap);
     }
 
     @Override
+    @Secured({ PermissionsProviderSecured.SECURED })
     public EntityResult candidateUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
             throws OntimizeJEERuntimeException {
         return this.daoHelper.update(this.candidateDao, attrMap, keyMap);
     }
 
     @Override
+    @Secured({ PermissionsProviderSecured.SECURED })
     public EntityResult candidateDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.candidateDao, keyMap);
     }
