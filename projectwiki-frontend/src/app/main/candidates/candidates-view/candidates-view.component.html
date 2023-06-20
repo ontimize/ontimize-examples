@@ -1,0 +1,60 @@
+
+<o-form attr="candidates_form_edit" keys="ID" service="candidates" entity="candidate" keys-sql-types="integer" fxFlexFill header-position="bottom">
+
+  <div fxLayout="row" fxLayoutGap="50px">
+
+    <o-column fxFlex="75" fxFlex.md="60" layout-gap="12px" title="CANDIDATE_DATA">
+
+      <div fxLayout="row wrap" fxLayoutGap="15px">
+        <o-text-input attr="NAME" required="true" fxFlex></o-text-input>
+        <o-text-input attr="SURNAME" required="true" fxFlex></o-text-input>
+        <!-- <o-checkbox attr="PROCESS_ANOTHER_COM" sql-type="STRING" boolean-type="string" false-value="N" true-value="Y" layout-padding></o-checkbox> -->
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutGap="15px">
+        <o-date-input attr="BIRTHDAY" fxFlex></o-date-input>
+        <o-text-input attr="DNI" fxFlex></o-text-input>
+      </div>
+
+
+      <div fxLayout="row wrap" fxLayoutGap="15px">
+        <o-email-input attr="EMAIL" required="true" fxFlex></o-email-input>
+        <o-combo #statusCombo fxFlex attr="STATUS" label="STATUS" value-column="STATUS" keys-sql-types="INTEGER" columns="STATUS"
+          [static-data]="statusData()" visible-columns="STATUS" read-only="no" translate="yes">
+        </o-combo>
+        <o-text-input attr="LINKEDIN" fxFlex></o-text-input>
+      </div>
+
+
+      <div fxLayout="row wrap" fxLayoutGap="15px">
+        <o-text-input attr="PHONE" fxFlex></o-text-input>
+        <o-text-input attr="EDUCATION" fxFlex></o-text-input>
+        <o-combo #originCombo fxFlex attr="ORIGIN" label="ORIGIN" value-column="ORIGIN" keys-sql-types="INTEGER" columns="ORIGIN"
+          [static-data]="originData()" visible-columns="ORIGIN" read-only="no" translate="yes">
+        </o-combo>
+      </div>
+
+      <o-textarea-input attr="SPECIALTIES" rows="3" fxFlex></o-textarea-input>
+
+      <!-- añadir neuvos campos a la ficha -->
+      <div fxLayout="row wrap" fxLayoutGap="15px">
+        <!-- <o-text-input attr="HOMETOWN" fxFlex></o-text-input> -->
+        <!-- <o-text-input attr="PREF_IMATIA_OFFER" fxFlex></o-text-input> -->
+        <o-real-input attr="WAGE_LEVEL" fxFlex></o-real-input> <!-- tipo moneda -->
+      </div>
+
+    </o-column>
+    <o-image attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER" class="avatar"></o-image>
+
+  </div>
+
+
+  <input #inputElem type="file" hidden="true" (input)="inputChanged($event)" />
+
+  <o-file-input #fileInput attr="_file_input" service="files" entity="upload" split-upload="no" max-files="10" hidden="true"
+    (onError)="fileInputElemError($event)" (onUpload)="fileInputElemUpload($event)">
+  </o-file-input>
+
+  <o-filemanager-table type="S3" service="candidates"  [workspace-s3]="setWorkspaceS3"  ></o-filemanager-table>
+  <!-- [workspace-s3]="workspace" -->
+</o-form>

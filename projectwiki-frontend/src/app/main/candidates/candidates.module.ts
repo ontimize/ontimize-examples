@@ -4,14 +4,16 @@ import { CommonModule } from '@angular/common';
 import { CandidatesRoutingModule } from './candidates-routing.module';
 import { CandidatesHomeComponent } from './home/candidates-home.component';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { CandidatesViewComponent } from './candidates-view/candidates-view.component';
+import { OFileManagerModule } from 'ontimize-web-ngx-filemanager';
 
 
 @NgModule({
-  declarations: [CandidatesHomeComponent],
+  declarations: [CandidatesHomeComponent, CandidatesViewComponent],
   imports: [
     CommonModule,
     CandidatesRoutingModule,
-    OntimizeWebModule
-  ]
+    OntimizeWebModule,
+    OFileManagerModule]
 })
 export class CandidatesModule { }
