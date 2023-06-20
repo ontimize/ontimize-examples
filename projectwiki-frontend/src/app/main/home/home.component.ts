@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Injector, OnInit } from '@angular/core';
+import { AuthService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'home',
@@ -8,10 +8,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  protected authService: AuthService;
+
   constructor(
-    private router: Router,
-    private actRoute: ActivatedRoute
+    protected injector: Injector
   ) {
+    this.authService = this.injector.get(AuthService);
   }
 
   ngOnInit() {
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
+    this.authService.logoutWithConfirmation();
   }
 
 }
