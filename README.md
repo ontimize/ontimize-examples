@@ -9,11 +9,12 @@ mvn clean install
 ### Frontend
 
 ```
+cd projectwiki-frontend
 npm install
 ```
 ## Launch database
 ```
-cd *-model
+cd projectwiki-model
 mvn exec:java -Prun_database
 ```
 ## Launch backend
@@ -33,5 +34,6 @@ mvn spring-boot:run
 ## Launch frontend
 
 ```
+cd projectwiki-frontend
 npm start
 ```
