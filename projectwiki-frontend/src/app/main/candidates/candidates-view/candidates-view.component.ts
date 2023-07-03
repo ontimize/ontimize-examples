@@ -138,8 +138,7 @@ export class CandidatesViewComponent implements OnInit {
   }
 
   setWorkspaceS3(data: any) {
-    console.log('data ',data);
-    return { name: 'default', data: { id: [1] } };
+    return { name: 'default', data: { id: data['ID'] } };
   }
 
 
