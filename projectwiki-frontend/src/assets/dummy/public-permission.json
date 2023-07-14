@@ -1,0 +1,24 @@
+{
+  "menu": [
+    {
+      "attr": "candidates",
+      "visible": false,
+      "enabled": false
+    },
+    {
+      "attr": "home",
+      "visible": false,
+      "enabled": false
+    }
+  ],
+  "routes": [
+    {
+      "permissionId": "candidates-table-route",
+      "enabled": false
+    },
+    {
+      "permissionId": "home-route",
+      "enabled": false
+    }
+  ]
+}
