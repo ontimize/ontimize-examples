@@ -11,5 +11,27 @@
       "permissionId": "candidates-table-route",
       "enabled": true
     }
+  ],
+  "components": [
+    {
+      "attr": "candidate",
+      "selector": "o-table",
+      "columns" : [
+        { "attr": "PHONE", "visible": false, "enabled": false }
+      ],
+      "actions": [
+        { "attr": "delete", "visible": true, "enabled": false }
+      ]
+    },
+    {
+      "attr":"candidates_form_edit",
+      "selector": "o-form",
+      "components": [
+        {"attr":"EMAIL","visible": true,"enabled": false}
+      ],
+      "actions": [
+        { "attr": "delete", "visible": true, "enabled": false }
+      ]
+    }
   ]
 }
