@@ -10,7 +10,8 @@ export const routes: Routes = [
     path: '', component: CandidatesHomeComponent,
     data: {
       oPermission: {
-        permissionId: 'candidates-table-route'
+        permissionId: 'candidates-table-route',
+        restrictedPermissionsRedirect: '403'
       }
     }
   },
@@ -18,7 +19,8 @@ export const routes: Routes = [
     path: 'new', component: CandidatesNewComponent,
     data: {
       oPermission: {
-        permissionId: 'candidates-table-route'
+        permissionId: 'candidates-table-route',
+        restrictedPermissionsRedirect: '403'
       }
     }
   },
@@ -27,7 +29,8 @@ export const routes: Routes = [
     component: CandidatesDetailComponent,
     data: {
       oPermission: {
-        permissionId: 'candidates-table-route'
+        permissionId: 'candidates-table-route',
+        restrictedPermissionsRedirect: '403'
       }
     }
   }

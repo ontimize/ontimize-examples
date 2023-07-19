@@ -9,7 +9,8 @@ const routes: Routes = [
     component: HomeComponent,
     data: {
       oPermission: {
-        permissionId: 'home-route'
+        permissionId: 'home-route',
+        restrictedPermissionsRedirect: '403'
       }
     }
   }

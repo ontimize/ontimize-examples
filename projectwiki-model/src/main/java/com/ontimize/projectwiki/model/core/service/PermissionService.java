@@ -28,16 +28,16 @@ public class PermissionService implements IPermissionService {
     public final String DEMO_PERMISSION;
 
     private String readFromInputStream(String fileName) throws IOException {
-        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
-        if(inputStream == null){
-            return "";
-        }
         StringBuilder resultStringBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(fileName))))) {
             String line;
             while ((line = br.readLine()) != null) {
                 resultStringBuilder.append(line).append("\n");
             }
+        }
+        catch (IOException e){
+            return "";
         }
         return resultStringBuilder.toString();
     }
