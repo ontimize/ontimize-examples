@@ -1,12 +1,20 @@
 # Getting Started
 
 ## First init
+
+### Backend
 ```
 mvn clean install
 ```
+### Frontend
+
+```
+cd projectwiki-frontend
+npm install
+```
 ## Launch database
 ```
-cd *-model
+cd projectwiki-model
 mvn exec:java -Prun_database
 ```
 ## Launch backend
@@ -21,4 +29,11 @@ If you are no longer doing active development on the backend (e.g.: you are deve
 mvn clean install
 cd *-boot
 mvn spring-boot:run
+```
+
+## Launch frontend
+
+```
+cd projectwiki-frontend
+npm start
 ```

@@ -1,0 +1,15 @@
+{
+  "menu": [
+    {
+      "attr": "candidates",
+      "visible": false,
+      "enabled": false
+    }
+  ],
+  "routes": [
+    {
+      "permissionId": "candidates-table-route",
+      "enabled": false
+    }
+  ]
+}
