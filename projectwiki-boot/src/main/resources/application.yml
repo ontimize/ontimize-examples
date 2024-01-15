@@ -5,6 +5,9 @@ logging:
    level:
       root: info
 ontimize:
+   report:
+      enable: true
+      engine: database
    corsfilter:
       enabled: true
    globalcors:
