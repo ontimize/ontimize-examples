@@ -11,22 +11,22 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/CandidateDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class CandidateDao extends OntimizeJdbcDaoSupport {
 
-	public static final String ATTR_ID = "ID";
-	public static final String ATTR_PHOTO = "PHOTO";
-	public static final String ATTR_NAME = "NAME";
-	public static final String ATTR_SURNAME = "SURNAME";
-	public static final String ATTR_BIRTHDAY = "BIRTHDAY";
-	public static final String ATTR_DNI = "DNI";
-	public static final String ATTR_PHONE = "PHONE";
-	public static final String ATTR_EMAIL = "EMAIL";
-	public static final String ATTR_EDUCATION = "EDUCATION";
-	public static final String ATTR_SPECIALTIES = "SPECIALTIES";
-	public static final String ATTR_STATUS = "STATUS";
-	public static final String ATTR_ORIGIN = "ORIGIN";
-	public static final String ATTR_WAGE_LEVEL = "WAGE_LEVEL";
-	public static final String ATTR_EXPERIENCE_LEVEL = "EXPERIENCE_LEVEL";
-	public static final String ATTR_PROFILE = "PROFILE";
-	public static final String ATTR_COMMENT = "COMMENT";
-	public static final String ATTR_LINKEDIN = "LINKEDIN";
+	public static final String ATTR_ID = "id";
+	public static final String ATTR_PHOTO = "photo";
+	public static final String ATTR_NAME = "name";
+	public static final String ATTR_SURNAME = "surname";
+	public static final String ATTR_BIRTHDAY = "birthday";
+	public static final String ATTR_DNI = "dni";
+	public static final String ATTR_PHONE = "phone";
+	public static final String ATTR_EMAIL = "email";
+	public static final String ATTR_EDUCATION = "education";
+	public static final String ATTR_SPECIALTIES = "specialties";
+	public static final String ATTR_STATUS = "status";
+	public static final String ATTR_ORIGIN = "origin";
+	public static final String ATTR_WAGE_LEVEL = "wage_level";
+	public static final String ATTR_EXPERIENCE_LEVEL = "experience_level";
+	public static final String ATTR_PROFILE = "profile";
+	public static final String ATTR_COMMENT = "comment";
+	public static final String ATTR_LINKEDIN = "linkedin";
 
 }

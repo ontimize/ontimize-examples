@@ -2,12 +2,12 @@
 <JdbcEntitySetup xmlns="http://www.ontimize.com/schema/jdbc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
-	table="REPORTS" datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+	table="reports" datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
 	<DeleteKeys>
-		<Column>ID</Column>
+		<Column>id</Column>
 	</DeleteKeys>
 	<UpdateKeys>
-		<Column>ID</Column>
+		<Column>id</Column>
 	</UpdateKeys>
-	<GeneratedKey>ID</GeneratedKey>
+	<GeneratedKey>id</GeneratedKey>
 </JdbcEntitySetup>

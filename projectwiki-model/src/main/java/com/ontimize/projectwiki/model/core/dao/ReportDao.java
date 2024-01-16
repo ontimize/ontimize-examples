@@ -12,13 +12,13 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/ReportDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class ReportDao extends OntimizeJdbcDaoSupport implements IReportDao {
 
-	public static final String	ATTR_ID					  = "ID";
-	public static final String	ATTR_NAME		 		  = "NAME";
-	public static final String	ATTR_DESCRIPTION		  = "DESCRIPTION";
-	public static final String	ATTR_REPORT_TYPE 		  = "REPORT_TYPE";
-	public static final String	ATTR_MAIN_REPORT_FILENAME = "MAIN_REPORT_FILENAME";
-	public static final String	ATTR_ZIP				  = "ZIP";
-	public static final String	ATTR_COMPILED			  = "COMPILED";
+	public static final String	ATTR_ID					  = "id";
+	public static final String	ATTR_NAME		 		  = "name";
+	public static final String	ATTR_DESCRIPTION		  = "description";
+	public static final String	ATTR_REPORT_TYPE 		  = "report_type";
+	public static final String	ATTR_MAIN_REPORT_FILENAME = "main_report_filename";
+	public static final String	ATTR_ZIP				  = "zip";
+	public static final String	ATTR_COMPILED			  = "compiled";
 	
 	public ReportDao() {
 		super();
