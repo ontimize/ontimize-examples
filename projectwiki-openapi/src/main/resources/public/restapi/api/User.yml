@@ -1,0 +1,20 @@
+login:
+  post:
+    operationId: login
+    tags:
+      - Users
+    summary: Validates the current session.
+    description: >
+      This resource represents a session in the system.
+    x-hasparentpath: true
+    responses:
+      '200':
+        $ref: '../base/Responses.yml#/components/responses/EntityResult'
+      '400':
+        $ref: '../base/Responses.yml#/components/responses/BadRequest'
+      '401':
+        $ref: '../base/Responses.yml#/components/responses/Unauthorized'
+      '404':
+        $ref: '../base/Responses.yml#/components/responses/NotFound'
+      default:
+        $ref: '../base/Responses.yml#/components/responses/Unexpected'
