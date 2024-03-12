@@ -16,9 +16,12 @@ paths:
 
 components:
   securitySchemes:
-    BasicAuth:
-      type: http
-      scheme: basic
+    OAuth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8082/realms/demo/protocol/openid-connect/auth
+          scopes: {}
 
 security:
-  - BasicAuth: []
+  - OAuth2: []
