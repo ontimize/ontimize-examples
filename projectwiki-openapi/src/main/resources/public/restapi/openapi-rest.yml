@@ -19,6 +19,19 @@ paths:
     $ref: 'api/Test.yml#/test'
 
 components:
+  parameters:
+    TenantId:
+      in: header
+      name: X-Tenant
+      required: true
+      schema:
+        type: string
+      examples:
+        Tenant 1:
+          value: tenant1
+        Tenant 2:
+          value: tenant2
+      x-ignore: true
   securitySchemes:
     BasicAuth:
       type: http

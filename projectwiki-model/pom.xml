@@ -58,6 +58,7 @@
 										<available file="${hsqldatabase.path}/templateDB.script" property="database.exist" />
 										<echo message="${hsqldatabase.path}/templateDB.script" />
 										<copy tofile="${hsqldatabase.path}/templateDB.script" file="${hsqldatabase.path}/templateDB.txt" />
+										<copy tofile="${hsqldatabase.path}/templateDB1.script" file="${hsqldatabase.path}/templateDB.txt" />
 									</target>
 								</configuration>
 							</execution>
@@ -76,6 +77,10 @@
 								<argument>${hsqldatabase.path}/templateDB</argument>
 								<argument>-dbname.0</argument>
 								<argument>templateDB</argument>
+								<argument>-database.1</argument>
+								<argument>${hsqldatabase.path}/templateDB1</argument>
+								<argument>-dbname.1</argument>
+								<argument>templateDB1</argument>
 							</arguments>
 						</configuration>
 					</plugin>

@@ -20,11 +20,27 @@ ontimize:
             - OPTIONS
             - DELETE
    jdbc:
+      datasource:
+         enabled: false
       name-convention: upper
       sqlhandler: hsqldb
       sql-condition-processor:
          upper-string: true
          upper-like: true
+   multitenant:
+      enabled: true
+      configuration:
+         tenants:
+            tenant1:
+               driver-class: org.hsqldb.jdbcDriver
+               jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
+               username: SA
+               password:
+            tenant2:
+               driver-class: org.hsqldb.jdbcDriver
+               jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB1
+               username: SA
+               password:
    security:
       mode: default
       ignore-paths: '/index.html,/app/**,/error,/test,/restapi/**,/swagger-ui/**'
@@ -63,13 +79,6 @@ server:
       enabled: true
       mime-types: application/json, application/xml
 spring:
-   datasource:
-      driver-class-name: org.hsqldb.jdbcDriver
-      jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
-      username: SA
-      password:
-      initial-size: 10
-      test-on-borrow: true
    main:
       banner-mode: 'off'
    session:
