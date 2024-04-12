@@ -55,9 +55,17 @@
 								</goals>
 								<configuration>
 									<target>
-										<available file="${hsqldatabase.path}/templateDB.script" property="database.exist" />
-										<echo message="${hsqldatabase.path}/templateDB.script" />
-										<copy tofile="${hsqldatabase.path}/templateDB.script" file="${hsqldatabase.path}/templateDB.txt" />
+										<available file="${hsqldatabase.path}/templateDB_Main.script" property="database.exist" />
+										<echo message="${hsqldatabase.path}/templateDB_Main.script" />
+										<copy tofile="${hsqldatabase.path}/templateDB_Main.script" file="${hsqldatabase.path}/templateDB_Main.txt" />
+
+										<available file="${hsqldatabase.path}/templateDB1.script" property="database.exist" />
+										<echo message="${hsqldatabase.path}/templateDB1.script" />
+										<copy tofile="${hsqldatabase.path}/templateDB1.script" file="${hsqldatabase.path}/templateDB.txt" />
+
+										<available file="${hsqldatabase.path}/templateDB2.script" property="database.exist" />
+										<echo message="${hsqldatabase.path}/templateDB2.script" />
+										<copy tofile="${hsqldatabase.path}/templateDB2.script" file="${hsqldatabase.path}/templateDB.txt" />
 									</target>
 								</configuration>
 							</execution>
@@ -72,10 +80,21 @@
 							<arguments>
 								<argument>-port</argument>
 								<argument>9013</argument>
+
 								<argument>-database.0</argument>
-								<argument>${hsqldatabase.path}/templateDB</argument>
+								<argument>${hsqldatabase.path}/templateDB_Main</argument>
 								<argument>-dbname.0</argument>
-								<argument>templateDB</argument>
+								<argument>templateDB_Main</argument>
+
+								<argument>-database.1</argument>
+								<argument>${hsqldatabase.path}/templateDB1</argument>
+								<argument>-dbname.1</argument>
+								<argument>templateDB1</argument>
+
+								<argument>-database.2</argument>
+								<argument>${hsqldatabase.path}/templateDB2</argument>
+								<argument>-dbname.2</argument>
+								<argument>templateDB2</argument>
 							</arguments>
 						</configuration>
 					</plugin>

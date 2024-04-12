@@ -25,6 +25,16 @@ ontimize:
       sql-condition-processor:
          upper-string: true
          upper-like: true
+   multitenant:
+      enabled: true
+      configuration:
+         tenant-repository: TenantDao
+         query-id: default
+         tenant-id-column: TENANT_ID
+         driver-class-column: DRIVER_CLASS
+         jdbc-url-column: JDBC_URL
+         username-column: USERNAME
+         password-column: PASSWORD
    security:
       mode: default
       ignore-paths: '/index.html,/app/**,/error,/test,/restapi/**,/swagger-ui/**'
@@ -65,7 +75,7 @@ server:
 spring:
    datasource:
       driver-class-name: org.hsqldb.jdbcDriver
-      jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
+      jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB_Main
       username: SA
       password:
       initial-size: 10
