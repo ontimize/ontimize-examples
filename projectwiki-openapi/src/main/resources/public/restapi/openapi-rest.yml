@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: projectwiki API
+  version: '1.0'
+  description: The projectwiki API
+servers:
+  - url: '/'
+    description: Localhost
+
+paths:
+  /test/test:
+    get:
+      operationId: testRest
+      tags:
+        - Test
+      summary: Test
+      description: >
+        Develop purposes only.
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+        '401':
+          description: Not found
+        '404':
+          description: Unauthorized
+        default:
+          description: Unexpected error
+    post:
+      operationId: postTest
+      tags:
+        - Test
+      summary: POST Test
+      description: >
+        Develop purposes only.
+      x-codegen-request-body-name: person
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+            examples:
+              Laura Bugle:
+                value:
+                  name: 'Laura'
+                  surname: 'Bugle'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+        '401':
+          description: Not found
+        '404':
+          description: Unauthorized
+        default:
+          description: Unexpected error
+
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        name:
+          description: Name
+          type: string
+        surname:
+          description: Surname
+          type: string
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
+security:
+  - BasicAuth: []
