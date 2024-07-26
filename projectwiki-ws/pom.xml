@@ -12,6 +12,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.ontimize</groupId>
+			<artifactId>projectwiki-openapi</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ontimize</groupId>
 			<artifactId>projectwiki-model</artifactId>
 		</dependency>
 

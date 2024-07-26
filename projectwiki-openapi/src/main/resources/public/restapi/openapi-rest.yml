@@ -1,0 +1,364 @@
+openapi: 3.0.3
+info:
+  title: projectwiki API
+  version: '1.0'
+  description: The projectwiki API
+servers:
+  - url: '/'
+    description: Localhost
+
+paths:
+  /users/user:
+    post:
+      tags:
+        - Users
+      summary: Inserts a user.
+      description: >
+        This resource represents a user in the system.
+      x-restcontroller: orestcontroller
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsertParameter'
+            examples:
+              Laura Bugle:
+                value:
+                  data:
+                    USER_: 'laura'
+                    PASSWORD: '1432'
+                    NAME: 'Laura'
+                    SURNAME: 'Bugle'
+                    EMAIL: 'laurabugle@gmail.com'
+                    NIF: '11111111H'
+                    USERBLOCKED: '2016-09-19T12:00:00Z'
+                    LASTPASSWORDUPDATE: '2021-06-01T12:00:00'
+                    FIRSTLOGIN: true
+                  sqltypes:
+                    USER_: 12
+                    PASSWORD: 12
+                    NAME: 12
+                    SURNAME: 12
+                    EMAIL: 12
+                    NIF: 12
+                    USERBLOCKED: 93
+                    LASTPASSWORDUPDATE: 93
+                    FIRSTLOGIN: 16
+      responses:
+        '200':
+          $ref: '#/components/responses/EntityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        default:
+          $ref: '#/components/responses/Unexpected'
+
+    get:
+      tags:
+        - Users
+      summary: Returns a list of users.
+      description: >
+        This resource represents a list of users in the system.
+      x-restcontroller: orestcontroller
+      parameters:
+        - in: query
+          name: filter
+          description: Filter
+          schema:
+            type: string
+          required: false
+          examples:
+            user_:
+              value: 'USER_=laura'
+            password:
+              value: 'PASSWORD=1432'
+            name:
+              value: 'NAME=Laura'
+            surname:
+              value: 'SURNAME=Bugle'
+            email:
+              value: 'EMAIL=laurabugle@gmail.com'
+            nif:
+              value: 'NIF=11111111H'
+        - in: query
+          name: columns
+          description: Columns
+          required: false
+          schema:
+            type: string
+            example: USER_,PASSWORD,NAME,SURNAME,EMAIL,NIF,USERBLOCKED,LASTPASSWORDUPDATE,FIRSTLOGIN
+      responses:
+        '200':
+          $ref: '#/components/responses/EntityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        default:
+          $ref: '#/components/responses/Unexpected'
+
+    put:
+      tags:
+        - Users
+      summary: Updates a user.
+      description: >
+        This resource represents a user in the system.
+      x-restcontroller: orestcontroller
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateParameter'
+            examples:
+              pasword:
+                value:
+                  data:
+                    PASSWORD: 'mT765HkqjY_34:76l'
+                  filter:
+                    USER_: 'laura'
+                  sqltypes:
+                    USER_: 12
+              email:
+                value:
+                  data:
+                    EMAIL: 'laura.bugle@gmail.com'
+                  filter:
+                    USER_: 'laura'
+                  sqltypes:
+                    USER_: 12
+      responses:
+        '200':
+          $ref: '#/components/responses/EntityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        default:
+          $ref: '#/components/responses/Unexpected'
+
+    delete:
+      tags:
+        - Users
+      summary: Deletes a user.
+      description: >
+        This resource represents a user in the system.
+      x-restcontroller: orestcontroller
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteParameter'
+            examples:
+              userid:
+                value:
+                  filter:
+                    USER_: 'laura'
+                  sqltypes:
+                    USER_: 12
+      responses:
+        '200':
+          $ref: '#/components/responses/EntityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        default:
+          $ref: '#/components/responses/Unexpected'
+
+  /users/user/search:
+    post:
+      tags:
+        - Users
+      summary: Searches and returns a list of users.
+      description: >
+        This resource represents a list of users in the system.
+      x-restcontroller: orestcontroller
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryParameter'
+            examples:
+              surname:
+                value:
+                  filter:
+                    SURNAME: 'Bugle'
+                  columns:
+                    - USER_
+                    - PASSWORD
+                    - NAME
+                    - SURNAME
+                    - EMAIL
+                    - NIF
+                    - USERBLOCKED
+                    - LASTPASSWORDUPDATE
+                    - FIRSTLOGIN
+                  sqltypes:
+                    SURNAME: 12
+      responses:
+        '200':
+          $ref: '#/components/responses/EntityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        default:
+          $ref: '#/components/responses/Unexpected'
+
+  /users/login:
+    post:
+      operationId: login
+      tags:
+        - Users
+      summary: Validates the current session.
+      description: >
+        This resource represents a session in the system.
+      x-hasparentpath: true
+      responses:
+        '200':
+          $ref: '#/components/responses/EntityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        default:
+          $ref: '#/components/responses/Unexpected'
+
+components:
+  responses:
+    EntityResult:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityResult'
+    BadRequest:
+      description: Bad request
+    NotFound:
+      description: Not found
+    Unauthorized:
+      description: Unauthorized
+    Unexpected:
+      description: Unexpected error
+
+  schemas:
+    DeleteParameter:
+      type: object
+      properties:
+        filter:
+          description: Filter
+          type: object
+          additionalProperties:
+            type: string
+        sqltypes:
+          description: SQL types
+          type: object
+          additionalProperties:
+            type: string
+    EntityResult:
+      type: object
+      properties:
+        type:
+          description: Type
+          type: integer
+        code:
+          description: Code
+          type: integer
+        message:
+          description: Message
+          type: string
+        details:
+          description: Details
+          type: string
+        messageParameter:
+          description: Message parameter
+          type: array
+          items:
+            type: object
+        compressionLevel:
+          description: Compression level
+          type: integer
+        compressionThreshold:
+          description: Compression threshold
+          type: integer
+        columnsSQLTypes:
+          description: Columns SQL types
+          type: object
+          additionalProperties:
+            type: integer
+        operationId:
+          description: Operation Id
+          type: string
+    InsertParameter:
+      type: object
+      properties:
+        data:
+          description: Data
+          type: object
+          additionalProperties:
+            type: string
+        sqltypes:
+          description: SQL types
+          type: object
+          additionalProperties:
+            type: string
+    QueryParameter:
+      type: object
+      properties:
+        filter:
+          description: Filter
+          type: object
+          additionalProperties:
+            type: string
+        columns:
+          description: Columns
+          type: array
+          items:
+            type: string
+        sqltypes:
+          description: SQL types
+          type: object
+          additionalProperties:
+            type: string
+    UpdateParameter:
+      type: object
+      properties:
+        data:
+          description: Data
+          type: object
+          additionalProperties:
+            type: string
+        filter:
+          description: Filter
+          type: object
+          additionalProperties:
+            type: string
+        sqltypes:
+          description: SQL types
+          type: object
+          additionalProperties:
+            type: string
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
+security:
+  - BasicAuth: []

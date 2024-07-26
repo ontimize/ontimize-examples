@@ -27,7 +27,7 @@ ontimize:
          upper-like: true
    security:
       mode: default
-      ignore-paths: /app/**
+      ignore-paths: '/index.html,/restapi/**,/swagger-ui/**'
       role-information-service:
          role-repository: UserRoleDao
          role-name-column: ROLENAME
@@ -75,3 +75,5 @@ spring:
    autoconfigure:
       exclude: |
          org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration, org.springframework.boot.actuate.autoconfigure.ManagementWebSecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.FallbackWebSecurityAutoConfiguration
+   resources:
+      static-locations: classpath:/public/
