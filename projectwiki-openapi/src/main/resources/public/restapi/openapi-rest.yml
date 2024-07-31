@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: projectwiki API
+  version: '1.0'
+  description: The projectwiki API
+servers:
+  - url: '/'
+    description: Localhost
+
+paths:
+  /users/user:
+    $ref: 'api/User.yml#/default'
+  /users/user/search:
+    $ref: 'api/User.yml#/search'
+  /users/login:
+    $ref: 'api/User.yml#/login'
+
+  /test/test:
+    $ref: 'api/Test.yml#/test'
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
+security:
+  - BasicAuth: []
