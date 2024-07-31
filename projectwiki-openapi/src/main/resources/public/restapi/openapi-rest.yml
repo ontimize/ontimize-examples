@@ -8,10 +8,6 @@ servers:
     description: Localhost
 
 paths:
-  /users/user:
-    $ref: 'api/User.yml#/default'
-  /users/user/search:
-    $ref: 'api/User.yml#/search'
   /users/login:
     $ref: 'api/User.yml#/login'
 
@@ -19,10 +15,33 @@ paths:
     $ref: 'api/Test.yml#/test'
 
 components:
+  parameters:
+    TenantId:
+      in: header
+      name: X-Tenant
+      required: true
+      schema:
+        type: string
+      x-ignore: true
+      examples:
+        Tenant1:
+          value: 'tenant1'
+        Tenant2:
+          value: 'tenant2'
   securitySchemes:
-    BasicAuth:
-      type: http
-      scheme: basic
+    OAuth2Demo1:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8082/realms/demo1/protocol/openid-connect/auth
+          scopes: {}
+    OAuth2Demo2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8082/realms/demo2/protocol/openid-connect/auth
+          scopes: {}
 
 security:
-  - BasicAuth: []
+  - OAuth2Demo1: []
+  - OAuth2Demo2: []
